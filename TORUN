@@ -1,0 +1,33 @@
+TO RUN THE PROJECT
+
+
+$tomcat="E:\SD\tomcat\tomcat\apache-tomcat-10.1.24"
+$app="lab7"
+$webapp=Join-Path $tomcat "webapps\$app"
+$classes=Join-Path $webapp "WEB-INF\classes"
+
+New-Item -ItemType Directory -Force -Path $classes | Out-Null
+Copy-Item -Force "E:\SD\lab 7\index.html" $webapp
+Copy-Item -Force -Recurse "E:\SD\lab 7\WEB-INF" $webapp
+
+& "C:\Program Files\Microsoft\jdk-21.0.9.10-hotspot\bin\javac.exe" `
+  -classpath "$tomcat\lib\*;$classes" `
+  -d $classes `
+  "E:\SD\lab 7\DBConnection.java" `
+  "E:\SD\lab 7\RS.java" `
+  "E:\SD\lab 7\ListReservations.java"
+
+$env:CATALINA_HOME=$tomcat
+$env:CATALINA_BASE=$tomcat
+& "$tomcat\bin\startup.bat"
+
+
+
+TO STOP THE PROJECT
+
+$tomcat="E:\SD\tomcat\tomcat\apache-tomcat-10.1.24"; $env:CATALINA_HOME=$tomcat; $env:CATALINA_BASE=$tomcat; & "$tomcat\bin\shutdown.bat"
+
+Then open:
+
+http://localhost:8083/lab7/
+http://localhost:8083/lab7/ListReservations

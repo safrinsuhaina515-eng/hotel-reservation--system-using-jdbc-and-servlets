@@ -1,0 +1,8 @@
+{
+  "java.project.referencedLibraries": [
+    "lib/jakarta.servlet-api-6.0.0.jar",
+    "lib/mysql-connector-j-8.0.33.jar",
+    "e:/SD/lab 7/lib/jakarta.servlet-api-6.0.0.jar",
+    "e:/SD/lab 7/lib/mysql-connector-j-8.0.33.jar"
+  ]
+}

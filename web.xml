@@ -1,0 +1,27 @@
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee 
+         https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <servlet>
+        <servlet-name>RS</servlet-name>
+        <servlet-class>RS</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RS</servlet-name>
+        <url-pattern>/RS</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ListReservations</servlet-name>
+        <servlet-class>ListReservations</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ListReservations</servlet-name>
+        <url-pattern>/ListReservations</url-pattern>
+    </servlet-mapping>
+
+</web-app>
